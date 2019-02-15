@@ -686,7 +686,7 @@ public class RNSendIntentModule extends ReactContextBaseJavaModule {
 
         File fileUrl = new File(options.getString("fileUrl"));
         if (Build.VERSION.SDK_INT > Build.VERSION_CODES.M) {
-            Uri uri = FileProvider.getUriForFile(this.reactContext, this.reactContext.getPackageName() + ".fileprovider", fileUrl);
+            Uri uri = FileProvider.getUriForFile(this.reactContext, this.reactContext.getPackageName() + ".provider", fileUrl);
             intent.setDataAndType(uri, options.getString("type"));
         } else {
             intent.setDataAndType(Uri.fromFile(fileUrl), options.getString("type"));
